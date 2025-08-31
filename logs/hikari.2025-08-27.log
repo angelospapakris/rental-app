@@ -1,0 +1,86 @@
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - Class com.mysql.cj.jdbc.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@783cdcf3
+
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@66313141
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................."com.mysql.cj.jdbc.Driver"
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:mysql://localhost:3306/rentalsystemdb?serverTimezone=UTC#
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - username........................"rentaluser"
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2025-08-27 22:04:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (be7ddcbd-c783-40ee-8697-6c4f772c4f7a)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (be7ddcbd-c783-40ee-8697-6c4f772c4f7a)
+2025-08-27 22:04:31 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a7ba767
+2025-08-27 22:04:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (46dca4f7-9c76-4370-afcf-25deed5bb5d7)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (46dca4f7-9c76-4370-afcf-25deed5bb5d7)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b6d1c33
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (796f0207-03a8-4203-af9a-c63e8a109a12)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (796f0207-03a8-4203-af9a-c63e8a109a12)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4b42e37c
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (cce44b74-5bc1-44d5-ae6d-26620a7ca176)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (cce44b74-5bc1-44d5-ae6d-26620a7ca176)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74356bef
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (84fd3205-42f1-410d-be4e-e874d9ecd42f)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (84fd3205-42f1-410d-be4e-e874d9ecd42f)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f0c5c97
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (fb7c47db-54d7-45c9-95b7-6698e7661fa2)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (fb7c47db-54d7-45c9-95b7-6698e7661fa2)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5bd24dde
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (93ac0aff-61ed-4b1d-8075-9147012d90fc)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (93ac0aff-61ed-4b1d-8075-9147012d90fc)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2de1ab96
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (28450501-1de8-45eb-9652-a9b0fd39e564)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (28450501-1de8-45eb-9652-a9b0fd39e564)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@596babb0
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (902a9806-ea35-423f-a1fa-30586ef4d3b0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (902a9806-ea35-423f-a1fa-30586ef4d3b0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c483dc4
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (d352859d-910c-4f34-a6bd-ea4764ecdfb7)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (d352859d-910c-4f34-a6bd-ea4764ecdfb7)
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d474c10
+2025-08-27 22:04:31 DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=9/10, active=1, waiting=0)
