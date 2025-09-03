@@ -21,7 +21,8 @@ export const ENDPOINTS = {
     complete: (id: number | string) => `/api/viewings/${id}/complete`, // POST
   },
   applications: {
-    submitApps: "/api/applications",                // POST
+    submitApp: (propertyId: string | number) =>
+        `/api/applications?propertyId=${encodeURIComponent(propertyId)}`,              // POST
     ownerApps: "/api/applications/owner",       // GET
     tenantApps: "/api/applications/my",                 // GET
     approve: (id: number | string) => `/api/applications/${id}/approve`, // POST

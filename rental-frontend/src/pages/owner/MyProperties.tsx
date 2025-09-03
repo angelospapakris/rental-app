@@ -100,44 +100,44 @@ export default function MyProperties() {
     );
   }
 
-  return (
-    <div className="max-w-6xl mx-auto p-4 space-y-4">
-      <h1 className="text-2xl font-semibold">Τα ακίνητά μου</h1>
+    return (
+        <div className="max-w-6xl mx-auto p-4 space-y-4">
+          <h1 className="text-2xl font-semibold">Τα ακίνητά μου</h1>
 
-      {properties.length === 0 ? (
-        <div className="text-muted-foreground">Δεν υπάρχουν ακίνητα.</div>
-      ) : (
-        <div className="grid gap-3 md:grid-cols-2">
-          {properties.map((p) => (
-            <div key={p.id} className="p-4 border rounded-2xl space-y-3">
-                  <div className="relative">
-                    <PropertyCard property={p} />
-                    <div className="absolute bottom-3 left-3 z-10">
-                      <StatusBadge status={p.status} />
-                    </div>
+          {properties.length === 0 ? (
+            <div className="text-muted-foreground">Δεν υπάρχουν ακίνητα.</div>
+          ) : (
+            <div className="grid gap-3 md:grid-cols-2">
+              {properties.map((p) => (
+                <div key={p.id} className="p-4 border rounded-2xl space-y-3">
+                      <div className="relative">
+                        <PropertyCard property={p} />
+                        <div className="absolute bottom-3 left-3 z-10">
+                          <StatusBadge status={p.status} />
+                        </div>
+                      </div>
+                  <div className="flex gap-2">
+                    <Dialog open={!!editing && editing.id === p.id} onOpenChange={(open) => !open && setEditing(null)}>
+                      <DialogTrigger asChild>
+                        <Button onClick={() => setEditing(p)}>Επεξεργασία</Button>
+                      </DialogTrigger>
+                      {!!editing && editing.id === p.id && (
+                        <EditDialog
+                          initial={editing}
+                          submitting={update.isPending}
+                          onCancel={() => setEditing(null)}
+                          onSubmit={(vals) => {
+                            update.mutate(vals);
+                            setEditing(null);
+                          }}
+                        />
+                      )}
+                    </Dialog>
                   </div>
-              <div className="flex gap-2">
-                <Dialog open={!!editing && editing.id === p.id} onOpenChange={(open) => !open && setEditing(null)}>
-                  <DialogTrigger asChild>
-                    <Button onClick={() => setEditing(p)}>Επεξεργασία</Button>
-                  </DialogTrigger>
-                  {!!editing && editing.id === p.id && (
-                    <EditDialog
-                      initial={editing}
-                      submitting={update.isPending}
-                      onCancel={() => setEditing(null)}
-                      onSubmit={(vals) => {
-                        update.mutate(vals);
-                        setEditing(null);
-                      }}
-                    />
-                  )}
-                </Dialog>
-              </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          )}
 
       <div className="flex items-center justify-end gap-2 pt-2">
         <Button variant="outline" disabled={page <= 0} onClick={() => setPage((p) => Math.max(0, p - 1))}>

@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="922c8a19-4b99-4582-91ff-f9d7599d339f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/NewApplication.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/NewViewing.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rental-frontend/src/lib/verification.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-backend/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-backend/logs/hikari.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/hikari.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/api/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/api/client.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-frontend/src/api/endpoints.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/api/endpoints.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/components/Head.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/components/Head.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-frontend/src/components/PropertyCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/components/PropertyCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/MyApplications.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/MyApplications.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/MyViewings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/MyViewings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/owner/MyProperties.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/owner/MyProperties.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/NewApplication.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/tenant/NewApplication.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
