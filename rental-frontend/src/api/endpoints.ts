@@ -4,25 +4,25 @@ export const ENDPOINTS = {
     register: "/api/auth/register",
   },
   properties: {
-    public: "/api/properties",                  // GET: public (approved only)
-    create: "/api/properties",                  // POST: owner create (PENDING)
-    my: "/api/properties/my",                   // GET: owner
-    update: (id: number | string) => `/api/properties/${id}`, // PUT
+    publicProps: "/api/properties",                  // GET: public (approved only)
+    createProps: "/api/properties",                  // POST: owner create (PENDING)
+    myProps: "/api/properties/my",                   // GET: owner
+    updateProps: (id: number | string) => `/api/properties/${id}`, // PUT
     pending: "/api/properties/pending",         // GET: admin
     approve: (id: number | string) => `/api/properties/${id}/approve`, // POST
     reject: (id: number | string) => `/api/properties/${id}/reject`,   // POST
   },
   viewings: {
     request: "/api/viewings",                   // POST
-    ownerList: "/api/viewings/owner",           // GET
-    my: "/api/viewings/my",                     // GET
+    ownerViews: "/api/viewings/owner",           // GET
+    tenantViews: "/api/viewings/my",                     // GET
     confirm: (id: number | string) => `/api/viewings/${id}/confirm`,   // POST
     decline: (id: number | string) => `/api/viewings/${id}/decline`,   // POST
     complete: (id: number | string) => `/api/viewings/${id}/complete`, // POST
   },
   applications: {
     submit: "/api/applications",                // POST
-    ownerList: "/api/applications/owner",       // GET
+    ownerApps: "/api/applications/owner",       // GET
     my: "/api/applications/my",                 // GET
     approve: (id: number | string) => `/api/applications/${id}/approve`, // POST
     reject: (id: number | string) => `/api/applications/${id}/reject`,   // POST

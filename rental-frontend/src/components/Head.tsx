@@ -1,22 +1,25 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { Button } from "@/components/ui/button";
+import { Home } from "lucide-react";
 
 export default function NavBar() {
   const { user, logout, hasRole } = useAuth();
 
   return (
     <header className="border-b">
-      <div className="mx-auto max-w-6xl flex items-center justify-between p-4 gap-4">
-        <Link to="/" className="font-semibold text-xl">Rental System</Link>
-        <nav className="flex items-center gap-3">
-          <Link to="/">Ακίνητα</Link>
+      <div className="mx-auto max-w-6xl flex items-center justify-between p-3 gap-3">
+        <Link to="/" className="flex items-center gap-2 font-semibold text-xl">
+          <Home className="h-6 w-6" />
+          Σύστημα Διαχείρισης Ακινήτων
+        </Link>
+        <nav className="flex items-center gap-4 flex-wrap">
 
           {hasRole("OWNER") && (
             <>
-              <Link to="/owner/properties">Τα ακίνητά μου</Link>
-              <Link to="/owner/applications">Αιτήσεις</Link>
-              <Link to="/owner/viewings">Προβολές</Link>
+              <Link to="/myProps">Τα ακίνητά μου</Link>
+              <Link to="/ownerApps">Αιτήσεις</Link>
+              <Link to="/ownerViews">Προβολές</Link>
             </>
           )}
 

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="922c8a19-4b99-4582-91ff-f9d7599d339f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/gr.ath.ds.rental-system.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/rental-system.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rental-frontend/src/components/StatusBadge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rental-frontend/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/hikari.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/hikari.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/api/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/api/client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/api/endpoints.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/api/endpoints.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/auth/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/auth/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/components/Loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/components/Loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/components/Head.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/components/PropertyCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/components/PropertyCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/NotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/NotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/owner/MyProperties.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/owner/MyProperties.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/owner/NewProperty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/owner/NewProperty.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/owner/OwnerApplications.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/owner/OwnerApplications.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/owner/OwnerViewings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/owner/OwnerViewings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/router.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/rental-backend">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rental-system" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="rental-system" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="329MjO5Ye7NWJFz1eWpftRANHIk" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\stavp\IdeaProjects\rental-system\rental-frontend\src\pages\auth" />
+      <recent name="C:\Users\stavp\IdeaProjects\rental-system\rental-frontend\src\components" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="922c8a19-4b99-4582-91ff-f9d7599d339f" name="Changes" comment="" />
+      <created>1756828469976</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756828469976</updated>
+    </task>
+    <servers />
+  </component>
+</project>

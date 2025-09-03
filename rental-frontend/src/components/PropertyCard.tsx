@@ -17,7 +17,7 @@ export default function PropertyCard({ property, onApply, onRequestViewing }: Pr
       </CardHeader>
       <CardContent className="space-y-2">
         <p>{property.description}</p>
-        {property.price && <p className="font-semibold">{property.price} € / μήνα</p>}
+        {property.price && <p className="font-semibold">{property.price}€ </p>}
         <div className="flex gap-2">
           {onApply && <Button onClick={onApply}>Αίτηση ενοικίασης</Button>}
           {onRequestViewing && <Button variant="outline" onClick={onRequestViewing}>Αίτημα προβολής</Button>}

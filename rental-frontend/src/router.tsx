@@ -12,12 +12,12 @@ import MyApplications from "@/pages/tenant/MyApplications";
 import MyViewings from "@/pages/tenant/MyViewings";
 import Protected from "@/auth/Protected";
 import NotFound from "@/pages/NotFound";
-import NavBar from "@/components/NavBar";
+import Head from "@/components/Head";
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen">
-      <NavBar/>
+      <Head/>
       <main>{children}</main>
     </div>
   );
@@ -28,10 +28,10 @@ export const router = createBrowserRouter([
   { path: "/login", element: <Shell><Login/></Shell> },
   { path: "/register", element: <Shell><Register/></Shell> },
 
-  { path: "/owner/new", element: <Protected roles={["OWNER"]}><Shell><NewProperty/></Shell></Protected> },
-  { path: "/owner/properties", element: <Protected roles={["OWNER"]}><Shell><MyProperties/></Shell></Protected> },
-  { path: "/owner/applications", element: <Protected roles={["OWNER"]}><Shell><OwnerApplications/></Shell></Protected> },
-  { path: "/owner/viewings", element: <Protected roles={["OWNER"]}><Shell><OwnerViewings/></Shell></Protected> },
+  { path: "/createProps", element: <Protected roles={["OWNER"]}><Shell><NewProperty/></Shell></Protected> },
+  { path: "/myProps", element: <Protected roles={["OWNER"]}><Shell><MyProperties/></Shell></Protected> },
+  { path: "/ownerApps", element: <Protected roles={["OWNER"]}><Shell><OwnerApplications/></Shell></Protected> },
+  { path: "/ownerViews", element: <Protected roles={["OWNER"]}><Shell><OwnerViewings/></Shell></Protected> },
 
   { path: "/tenant/applications", element: <Protected roles={["TENANT"]}><Shell><MyApplications/></Shell></Protected> },
   { path: "/tenant/viewings", element: <Protected roles={["TENANT"]}><Shell><MyViewings/></Shell></Protected> },
