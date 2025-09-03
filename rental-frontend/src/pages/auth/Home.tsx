@@ -8,37 +8,54 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import type { Property, PagedResponse } from "@/types";
 
+/* Helpers */
+const toArray = <T,>(res: any): T[] =>
+  Array.isArray(res) ? res
+  : Array.isArray(res?.data) ? res.data
+  : Array.isArray(res?.content) ? res.content
+  : [];
+
+const looksLikeUnverified = (e: any) => {
+  const msg = String(e?.message ?? "");
+  const code = String(e?.code ?? e?.status ?? "");
+  return /access\s*denied/i.test(msg) || /forbidden/i.test(msg) || /verify/i.test(msg) || code === "500";
+};
+
 export default function Home() {
   const qc = useQueryClient();
   const { hasRole, user } = useAuth();
 
-  function toArray<T>(res: any): T[] {
-    if (!res) return [];
-    if (Array.isArray(res)) return res as T[];
-    if (Array.isArray(res?.data)) return res.data as T[];
-    if (Array.isArray(res?.content)) return res.content as T[];
-    return [];
-  }
+  const storageKey = user?.usernameOrEmail ? `blocked:${user.usernameOrEmail}` : null;
+  const getBlocked = () => (storageKey ? localStorage.getItem(storageKey) === "true" : false);
+  const setBlocked = (val: boolean) => { if (storageKey) localStorage.setItem(storageKey, String(val)); };
 
   const isTenant = hasRole("TENANT");
-  const tenantVerified = isTenant ? Boolean(user?.verified) : true; // tenants only
-  const canTenantAct = !isTenant || tenantVerified;
+  const tenantBlocked = isTenant ? getBlocked() : false;
+  const canTenantAct = !isTenant || !tenantBlocked;
 
   const { data: list = [], isLoading, error } = useQuery({
     queryKey: ["public-properties"],
-    queryFn: () =>
-      api.get<PagedResponse<Property> | Property[]>(ENDPOINTS.properties.publicProps),
+    queryFn: () => api.get<PagedResponse<Property> | Property[]>(ENDPOINTS.properties.publicProps),
     select: (res) => toArray<Property>(res),
   });
 
+  const onVerifyError = (e: any) => {
+    if (looksLikeUnverified(e)) {
+      setBlocked(true);
+      alert("Ο λογαριασμός δεν είναι επαληθευμένος από διαχειριστή.");
+    }
+  };
+
   const apply = useMutation({
-    mutationFn: (payload: any) => api.post(ENDPOINTS.applications.submit, payload),
+    mutationFn: (payload: any) => api.post(ENDPOINTS.applications.submitApps, payload),
     onSuccess: () => qc.invalidateQueries({ queryKey: ["my-applications"] }),
+    onError: onVerifyError,
   });
 
   const requestViewing = useMutation({
-    mutationFn: (payload: any) => api.post(ENDPOINTS.viewings.request, payload),
+    mutationFn: (payload: any) => api.post(ENDPOINTS.viewings.requestViews, payload),
     onSuccess: () => qc.invalidateQueries({ queryKey: ["my-viewings"] }),
+    onError: onVerifyError,
   });
 
   if (isLoading) return <Loading />;
@@ -49,29 +66,15 @@ export default function Home() {
       <div className="flex flex-wrap gap-3 justify-between items-center">
         <h1 className="text-2xl font-semibold">Διαθέσιμα ακίνητα</h1>
 
-        {/* Badge για TENANT */}
-        {isTenant && (
-          <span
-            className={
-              "text-sm px-3 py-1 rounded-xl border " +
-              (tenantVerified
-                ? "border-green-500 text-green-700 bg-green-50"
-                : "border-red-500 text-red-700 bg-red-50")
-            }
-            title={
-              tenantVerified
-                ? "Ο λογαριασμός είναι επαληθευμένος από διαχειριστή."
-                : "Μη επαληθευμένος λογαριασμός. Οι ενέργειες είναι απενεργοποιημένες."
-            }
-          >
-            {tenantVerified ? "Verified" : "Unverified"}
+        {isTenant && tenantBlocked && (
+          <span className="text-sm px-3 py-1 rounded-xl border border-red-500 text-red-700 bg-red-50">
+            Unverified
           </span>
         )}
 
-        {/* Κουμπί ιδιοκτήτη */}
         {hasRole("OWNER") && (
           <Button asChild>
-              <Link to="/createProps">+ Νέα καταχώριση</Link>
+            <Link to="/createProps">+ Νέα καταχώριση</Link>
           </Button>
         )}
       </div>
@@ -84,9 +87,10 @@ export default function Home() {
             <PropertyCard
               key={p.id}
               property={p}
-              // ✅ Αν ο tenant δεν είναι verified, ΔΕΝ περνάμε handlers (κρύβονται/απενεργοποιούνται)
               onApply={
-                canTenantAct && isTenant ? () => apply.mutate({ propertyId: p.id }) : undefined
+                canTenantAct && isTenant
+                  ? () => apply.mutate({ propertyId: p.id })
+                  : undefined
               }
               onRequestViewing={
                 canTenantAct && isTenant

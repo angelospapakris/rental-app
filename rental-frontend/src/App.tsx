@@ -9,6 +9,10 @@ import NewProperty from "@/pages/owner/NewProperty";
 import MyProperties from "@/pages/owner/MyProperties";
 import OwnerProperties from "@/pages/owner/OwnerProperties";
 import OwnerViewings from "@/pages/owner/OwnerViewings";
+import NewApplication from "@/pages/tenant/NewApplication";
+import NewViewing from "@/pages/tenant/NewViewing";
+import MyApplication from "@/pages/tenant/MyApplication";
+import MyViewing from "@/pages/tenant/MyViewing";
 
 const qc = new QueryClient();
 
@@ -30,6 +34,10 @@ function App() {
                 <Route path="/myProps" element={<MyProperties />} />
                 <Route path="/ownerApps" element={<OwnerApplications />} />
                 <Route path="/ownerViews" element={<OwnerViewings />} />
+                <Route path="/submitApps" element={<NewApplication />} />
+                <Route path="/requestViews" element={<NewViewing />} />
+                <Route path="/tenantApps" element={<MyApplications />} />
+                <Route path="/tenantViews" element={<MyViewing />} />
               </Routes>
             </main>
           </div>

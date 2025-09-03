@@ -25,8 +25,8 @@ export default function NavBar() {
 
           {hasRole("TENANT") && (
             <>
-              <Link to="/tenant/applications">Οι αιτήσεις μου</Link>
-              <Link to="/tenant/viewings">Οι προβολές μου</Link>
+              <Link to="/tenantApps">Οι αιτήσεις μου</Link>
+              <Link to="/tenantViews">Οι προβολές μου</Link>
             </>
           )}
 

@@ -8,11 +8,13 @@ import OwnerApplications from "@/pages/owner/OwnerApplications";
 import OwnerViewings from "@/pages/owner/OwnerViewings";
 import PendingProperties from "@/pages/admin/PendingProperties";
 import Users from "@/pages/admin/Users";
-import MyApplications from "@/pages/tenant/MyApplications";
-import MyViewings from "@/pages/tenant/MyViewings";
 import Protected from "@/auth/Protected";
 import NotFound from "@/pages/NotFound";
 import Head from "@/components/Head";
+import NewApplication from "@/pages/tenant/NewApplication";
+import NewViewing from "@/pages/tenant/NewViewing";
+import MyApplications from "@/pages/tenant/MyApplications";
+import MyViewings from "@/pages/tenant/MyViewings";
 
 function Shell({ children }: { children: React.ReactNode }) {
   return (
@@ -33,8 +35,10 @@ export const router = createBrowserRouter([
   { path: "/ownerApps", element: <Protected roles={["OWNER"]}><Shell><OwnerApplications/></Shell></Protected> },
   { path: "/ownerViews", element: <Protected roles={["OWNER"]}><Shell><OwnerViewings/></Shell></Protected> },
 
-  { path: "/tenant/applications", element: <Protected roles={["TENANT"]}><Shell><MyApplications/></Shell></Protected> },
-  { path: "/tenant/viewings", element: <Protected roles={["TENANT"]}><Shell><MyViewings/></Shell></Protected> },
+  { path: "/submitApps", element: <Protected roles={["TENANT"]}><Shell><NewApplication/></Shell></Protected> },
+  { path: "/requestViews", element: <Protected roles={["TENANT"]}><Shell><NewViewing/></Shell></Protected> },
+  { path: "/tenantViews", element: <Protected roles={["TENANT"]}><Shell><MyViewings/></Shell></Protected> },
+  { path: "/tenantApps", element: <Protected roles={["TENANT"]}><Shell><MyApplications/></Shell></Protected> },
 
   { path: "/admin/pending", element: <Protected roles={["ADMIN"]}><Shell><PendingProperties/></Shell></Protected> },
   { path: "/admin/users", element: <Protected roles={["ADMIN"]}><Shell><Users/></Shell></Protected> },
