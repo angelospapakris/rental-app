@@ -1,3 +1,3 @@
 # rental-system
-A Full Stack Application using Java, Spring boot with Gradle 
+A full-stack rental system application using Java (Spring Boot, Gradle) 
 and React with TypeScript
