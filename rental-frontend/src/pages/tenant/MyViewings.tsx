@@ -35,7 +35,7 @@ const STATUS_UI: Record<
   REQUESTED: { label: "Αιτήθηκε",     className: "bg-gray-300 text-gray-900 hover:bg-gray-300" },
   CONFIRMED: { label: "Επιβεβαιώθηκε", className: "bg-green-600 text-white hover:bg-green-600" },
   DECLINED:  { label: "Απορρίφθηκε",  className: "bg-red-600 text-white hover:bg-red-600" },
-  COMPLETED: { label: "Ολοκληρώθηκε", className: "bg-slate-700 text-white hover:bg-slate-700" },
+  COMPLETED: { label: "Ολοκληρώθηκε", className: "bg-slate-700 text-white hover:bg-blue-700" },
 };
 
 export default function NewViewing() {

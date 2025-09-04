@@ -45,9 +45,9 @@ public class ViewingRequestServiceImpl implements IViewingRequestService {
     @Transactional
     public ViewingRequest request(Long tenantId, Long propertyId, String notes) throws AppObjectNotFoundException, AppObjectInvalidArgumentException, AppObjectAlreadyExists {
         require(tenantId, RoleType.TENANT);
-
-        User tenant = userRepo.findById(tenantId)
-                .orElseThrow(() -> new AppObjectNotFoundException("NotFound", "Tenant not found"));
+        User tenant = userRepo.findById(tenantId).orElseThrow();
+        if (!Boolean.TRUE.equals(tenant.getIsVerified()))
+            throw new SecurityException("Tenant must be verified");
 
         Property p = propertyRepo.findById(propertyId)
                 .orElseThrow(() -> new AppObjectNotFoundException("NotFound", "Property not found"));

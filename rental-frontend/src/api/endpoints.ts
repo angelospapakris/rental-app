@@ -13,7 +13,8 @@ export const ENDPOINTS = {
     reject: (id: number | string) => `/api/properties/${id}/reject`,   // POST
   },
   viewings: {
-    requestViews: "/api/viewings",                   // POST
+    requestViews: (propertyId: string | number) =>
+          `/api/viewings?propertyId=${encodeURIComponent(propertyId)}`,                  // POST
     ownerViews: "/api/viewings/owner",           // GET
     tenantViews: "/api/viewings/my",                     // GET
     confirm: (id: number | string) => `/api/viewings/${id}/confirm`,   // POST
