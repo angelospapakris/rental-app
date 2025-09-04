@@ -2,9 +2,20 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
+import { useQueryClient } from "@tanstack/react-query"; // ⬅️ νέο
 
 export default function NavBar() {
   const { user, logout, hasRole } = useAuth();
+  const qc = useQueryClient();
+
+  const handleLogout = async () => {
+    // ενημέρωσε όλη την app ότι έγινε logout
+    window.dispatchEvent(new Event("app:logout"));
+    // καθάρισε react-query cache (προαιρετικό, αλλά χρήσιμο)
+    qc.clear();
+    // κάνε ό,τι ήδη έκανες στο logout
+    await logout();
+  };
 
   return (
     <header className="border-b">
@@ -47,7 +58,7 @@ export default function NavBar() {
           ) : (
             <>
               <span className="text-sm text-muted-foreground">{user.email}</span>
-              <Button variant="destructive" onClick={logout}>Έξοδος</Button>
+              <Button variant="destructive" onClick={handleLogout}>Έξοδος</Button>
             </>
           )}
         </div>
