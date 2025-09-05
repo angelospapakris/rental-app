@@ -40,8 +40,8 @@ export const router = createBrowserRouter([
   { path: "/tenantViews", element: <Protected roles={["TENANT"]}><Shell><MyViewings/></Shell></Protected> },
   { path: "/tenantApps", element: <Protected roles={["TENANT"]}><Shell><MyApplications/></Shell></Protected> },
 
-  { path: "/admin/pending", element: <Protected roles={["ADMIN"]}><Shell><PendingProperties/></Shell></Protected> },
-  { path: "/admin/users", element: <Protected roles={["ADMIN"]}><Shell><Users/></Shell></Protected> },
+  { path: "/pendingProps", element: <Protected roles={["ADMIN"]}><Shell><PendingProperties/></Shell></Protected> },
+  { path: "/searchUsers", element: <Protected roles={["ADMIN"]}><Shell><Users/></Shell></Protected> },
 
   { path: "*", element: <Shell><NotFound/></Shell> }
 ]);

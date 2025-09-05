@@ -19,6 +19,16 @@ export type ViewingStatus =
   | "DECLINED"
   | "COMPLETED";
 
+export const PROPERTY_TYPE_LABEL: Record<PropertyType, string> = {
+  APARTMENT: "Διαμέρισμα",
+  HOUSE: "Μονοκατοικία",
+  STUDIO: "Γκαρσονιέρα",
+};
+
+export function getPropertyTypeLabel(t?: PropertyType | null): string {
+  return t ? PROPERTY_TYPE_LABEL[t] ?? String(t) : "-";
+}
+
 export interface Property {
   id: number;
   title: string;

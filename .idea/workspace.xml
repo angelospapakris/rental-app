@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="922c8a19-4b99-4582-91ff-f9d7599d339f" name="Changes" comment="" />
+    <list default="true" id="922c8a19-4b99-4582-91ff-f9d7599d339f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/hikari.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/hikari.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/api/endpoints.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/api/endpoints.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/components/Head.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/components/Head.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/admin/PendingProperties.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/admin/PendingProperties.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/admin/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/admin/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/router.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/types.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

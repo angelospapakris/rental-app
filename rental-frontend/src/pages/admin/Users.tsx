@@ -12,7 +12,7 @@ export default function Users() {
   const search = async () => {
     setLoading(true);
     try {
-      const res = await api.get<any[]>(`${ENDPOINTS.adminUsers.search}?q=${encodeURIComponent(q)}`);
+      const res = await api.get<any[]>(`${ENDPOINTS.adminUsers.searchUsers}?q=${encodeURIComponent(q)}`);
       setData(res);
     } finally {
       setLoading(false);
@@ -29,7 +29,7 @@ export default function Users() {
       <h1 className="text-2xl font-semibold">Διαχείριση χρηστών</h1>
 
       <div className="flex gap-2">
-        <input className="border rounded px-3 py-2 w-full" placeholder="αναζήτηση…" value={q} onChange={e=>setQ(e.target.value)} />
+        <input className="border rounded px-3 py-2 w-full" placeholder="Αναζήτηση…" value={q} onChange={e=>setQ(e.target.value)} />
         <Button onClick={search}>Αναζήτηση</Button>
       </div>
 

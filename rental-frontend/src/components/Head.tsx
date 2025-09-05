@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/auth/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
-import { useQueryClient } from "@tanstack/react-query"; // ⬅️ νέο
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function NavBar() {
   const { user, logout, hasRole } = useAuth();
@@ -43,8 +43,8 @@ export default function NavBar() {
 
           {hasRole("ADMIN") && (
             <>
-              <Link to="/admin/pending">Εγκρίσεις</Link>
-              <Link to="/admin/users">Χρήστες</Link>
+              <Link to="/pendingProps">Εγκρίσεις ακινήτων</Link>
+              <Link to="/searchUsers">Χρήστες</Link>
             </>
           )}
         </nav>

@@ -13,6 +13,8 @@ import NewApplication from "@/pages/tenant/NewApplication";
 import NewViewing from "@/pages/tenant/NewViewing";
 import MyApplication from "@/pages/tenant/MyApplication";
 import MyViewing from "@/pages/tenant/MyViewing";
+import PendingProperties from "@/pages/admin/PendingProperties";
+import Users from "@/pages/admin/Users";
 
 const qc = new QueryClient();
 
@@ -38,6 +40,8 @@ function App() {
                 <Route path="/requestViews" element={<NewViewing />} />
                 <Route path="/tenantApps" element={<MyApplications />} />
                 <Route path="/tenantViews" element={<MyViewing />} />
+                <Route path="/pendingProps" element={<PendingProperties />} />
+                <Route path="/searchUsers" element={<Users />} />
               </Routes>
             </main>
           </div>

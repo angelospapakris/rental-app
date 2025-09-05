@@ -8,7 +8,7 @@ export const ENDPOINTS = {
     createProps: "/api/properties",                                                       // POST: owner create (PENDING)
     myProps: "/api/properties/my",                                                        // GET: owner
     updateProps: (id: number | string) => `/api/properties/${id}`,                        // PUT: owner
-    pending: "/api/properties/pending",                                                   // GET: admin
+    pendingProps: "/api/properties/pending",                                              // GET: admin
     approve: (id: number | string) => `/api/properties/${id}/approve`,                    // POST: admin
     reject: (id: number | string) => `/api/properties/${id}/reject`,                      // POST: admin
   },
@@ -30,7 +30,7 @@ export const ENDPOINTS = {
     reject: (id: number | string) => `/api/applications/${id}/reject`,                    // POST: owner
   },
   adminUsers: {
-    search: "/api/users",                                                                 // GET: admin, query: ?role=&verified=&active=
+    searchUsers: "/api/users",                                                            // GET: admin, query: ?role=&verified=&active=
     get: (id: number | string) => `/api/users/${id}`,                                     // GET : admin
     verify: (id: number | string) => `/api/users/${id}/verify`,                           // POST: admin
     assignRole: (id: number | string, role: string) => `/api/users/${id}/roles/${role}`,  // POST: admin
