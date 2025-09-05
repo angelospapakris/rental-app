@@ -42,11 +42,9 @@ export default function Users() {
     return Array.isArray(x) ? x : [];
   };
 
-  // --- Φέρε όλες τις σελίδες με currentPage/pageSize (ό,τι δείχνει το Postman) ---
   const fetchAllUsersCurrent = async (baseUrl: string, size = PAGE_SIZE) => {
     let page = 0;
     let out: any[] = [];
-    // πρώτο call για να μάθουμε totalPages
     {
       const glue = baseUrl.includes("?") ? "&" : "?";
       const url = `${baseUrl}${glue}currentPage=${page}&pageSize=${size}`;
@@ -66,7 +64,6 @@ export default function Users() {
           out = out.concat(getContent(r2));
         }
       } else {
-        // δεν έχουμε meta: συνέχισε μέχρι να γυρίσει < size
         while (chunk.length === size) {
           page += 1;
           const u2 = `${baseUrl}${glue}currentPage=${page}&pageSize=${size}`;
@@ -80,7 +77,6 @@ export default function Users() {
     return out;
   };
 
-  // --- Fallback για page/size, αν το backend προτιμά αυτό ---
   const fetchAllUsersPage = async (baseUrl: string, size = PAGE_SIZE) => {
     let page = 0;
     let out: any[] = [];
