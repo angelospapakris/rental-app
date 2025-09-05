@@ -174,49 +174,49 @@ function EditDialog({
 
       <form className="space-y-3" onSubmit={handleSubmit((vals) => onSubmit(vals))}>
         <div className="grid gap-3">
-          <Field id="title" label="Title" error={errors.title?.message}>
+          <Field id="title" label="Τίτλος" error={errors.title?.message}>
             <Input id="title" {...register("title")} />
           </Field>
 
-          <Field id="description" label="Description" error={errors.description?.message}>
+          <Field id="description" label="Περιγραφή" error={errors.description?.message}>
             <Textarea id="description" rows={4} {...register("description")} />
           </Field>
 
-          <Field id="address" label="Address" error={errors.address?.message}>
+          <Field id="address" label="Διεύθυνση" error={errors.address?.message}>
             <Input id="address" {...register("address")} />
           </Field>
 
-          <Field id="city" label="City" error={errors.city?.message}>
+          <Field id="city" label="Πόλη" error={errors.city?.message}>
             <Input id="city" {...register("city")} />
           </Field>
 
           <div className="grid grid-cols-3 gap-3">
-            <Field id="bedrooms" label="Bedrooms" error={errors.bedrooms?.message}>
+            <Field id="bedrooms" label="Υπνοδωμάτια" error={errors.bedrooms?.message}>
               <Input id="bedrooms" type="number" min={0} {...register("bedrooms", { valueAsNumber: true })} />
             </Field>
-            <Field id="bathrooms" label="Bathrooms" error={errors.bathrooms?.message}>
+            <Field id="bathrooms" label="Μπάνια" error={errors.bathrooms?.message}>
               <Input id="bathrooms" type="number" min={0} {...register("bathrooms", { valueAsNumber: true })} />
             </Field>
-            <Field id="size" label="Size (m²)" error={errors.size?.message}>
+            <Field id="size" label="Εμβαδό (m²)" error={errors.size?.message}>
               <Input id="size" type="number" min={1} {...register("size", { valueAsNumber: true })} />
             </Field>
           </div>
 
-          <Field id="price" label="Price (€)" error={errors.price?.message}>
+          <Field id="price" label="Τιμή (€ / μήνα)" error={errors.price?.message}>
             <Input id="price" type="number" step="0.01" min={0.01} {...register("price", { valueAsNumber: true })} />
           </Field>
 
           <div className="grid gap-1">
-            <Label>Type</Label>
+            <Label>Τύπος ακινήτου</Label>
             <Select
               defaultValue={initial.type}
               onValueChange={(v) => setValue("type", v as PropertyType, { shouldValidate: true })}
             >
               <SelectTrigger><SelectValue placeholder="Select type" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="Διαμέρισμα">APARTMENT</SelectItem>
-                <SelectItem value="Μονοκατοικία">HOUSE</SelectItem>
-                <SelectItem value="Γκαρσονιέρα">STUDIO</SelectItem>
+                <SelectItem value="Διαμέρισμα">Διαμέρισμα</SelectItem>
+                <SelectItem value="Μονοκατοικία">Μονοκατοικία</SelectItem>
+                <SelectItem value="Γκαρσονιέρα">Γκαρσονιέρα</SelectItem>
               </SelectContent>
             </Select>
             {errors.type && <p className="text-sm text-red-600">{errors.type.message}</p>}
