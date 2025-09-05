@@ -1,4 +1,3 @@
-// src/pages/tenant/NewViewing.tsx
 import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api/client";
@@ -7,27 +6,27 @@ import Loading from "@/components/Loading";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import type { ViewingStatus } from "@/types";
+import { toArray } from "@/lib/utils";
 
-// ---- helpers: ΠΑΝΤΑ επιστρέφει array ----
-function toArray<T>(res: any): T[] {
-  if (!res) return [];
-  if (Array.isArray(res)) return res as T[];
-  if (Array.isArray(res?.data)) return res.data as T[];
-  if (Array.isArray(res?.content)) return res.content as T[];
-  return [];
-}
+// function toArray<T>(res: any): T[] {
+//   if (!res) return [];
+//   if (Array.isArray(res)) return res as T[];
+//   if (Array.isArray(res?.data)) return res.data as T[];
+//   if (Array.isArray(res?.content)) return res.content as T[];
+//   return [];
+// }
 
-// ---- types ----
+// ---- Types ----
 type Viewing = {
   id: number;
   propertyId: number;
   status: ViewingStatus;         // "REQUESTED" | "CONFIRMED" | "DECLINED" | "COMPLETED"
-  notes?: string;                // <-- εδώ δείχνουμε το notes
+  notes?: string;
   createdAt?: string;
 };
 type Property = { id: number; title?: string };
 
-// ---- status → UI mapping ----
+// ---- Status → UI mapping ----
 const STATUS_UI: Record<
   ViewingStatus,
   { label: string; className: string }
@@ -39,14 +38,14 @@ const STATUS_UI: Record<
 };
 
 export default function NewViewing() {
-  // 1) Τα δικά μου αιτήματα προβολής (tenant)
+  // 1) Tenant's viewing requests
   const viewingsQ = useQuery({
     queryKey: ["tenant-viewings"],
-    queryFn: () => api.get<any>(ENDPOINTS.viewings.tenantViews), // π.χ. "/api/viewings/my"
+    queryFn: () => api.get<any>(ENDPOINTS.viewings.tenantViews),
     select: (res) => toArray<Viewing>(res),
   });
 
-  // 2) Τίτλοι ακινήτων (public λίστα αρκεί για εμφάνιση)
+  // 2) Titles of properties (public)
   const propsQ = useQuery({
     queryKey: ["public-properties-for-titles"],
     queryFn: () => api.get<any>(ENDPOINTS.publicProps),
@@ -54,7 +53,7 @@ export default function NewViewing() {
     staleTime: 5 * 60 * 1000,
   });
 
-  // 3) Χάρτης id -> title
+  // 3) Id -> title
   const titleById = useMemo(() => {
     const m = new Map<number, string>();
     (propsQ.data ?? []).forEach((p) => {
@@ -103,7 +102,7 @@ export default function NewViewing() {
                 )}
               </div>
 
-              {/* Status “σαν badge” */}
+              {/* Status “like badge” */}
               <Button
                 type="button"
                 role="status"

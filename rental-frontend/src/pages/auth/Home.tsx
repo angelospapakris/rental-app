@@ -1,4 +1,3 @@
-// src/pages/auth/Home.tsx
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api/client";
@@ -28,47 +27,37 @@ import {
 } from "@/components/ui/select";
 import { Link } from "react-router-dom";
 import type { Property, PagedResponse } from "@/types";
-
-// ➡️ εικόνα φόντου
 import houseImg from "@/assets/house.png";
+import { getBlockedForUser, clearBlockedForUser } from "@/lib/verification";
+import { toArray } from "@/lib/utils";
 
-/* ---------- helpers ---------- */
-const toArray = <T,>(res: any): T[] =>
-  Array.isArray(res)
-    ? res
-    : Array.isArray(res?.data)
-    ? res.data
-    : Array.isArray(res?.content)
-    ? res.content
-    : [];
+// /* ---------- helpers ---------- */
+// const toArray = <T,>(res: any): T[] =>
+//   Array.isArray(res)
+//     ? res
+//     : Array.isArray(res?.data)
+//     ? res.data
+//     : Array.isArray(res?.content)
+//     ? res.content
+//     : [];
 
-/** Υποστηρίζει:
- *  - Spring page: { content, totalPages, ... } ή { data: { content, totalPages } }
- *  - Custom:      { data: T[], totalPages, ... }  <-- το δικό σου
- *  - Raw array:   T[]
- */
 function normalizePaged<T>(
   res: PagedResponse<T> | T[] | any,
   page: number,
   size: number
 ): { items: T[]; totalPages: number } {
-  // Spring page (ή τυλιγμένο μέσα σε data)
   if (res && (Array.isArray(res?.content) || Array.isArray(res?.data?.content))) {
     const content = Array.isArray(res.content) ? res.content : res.data.content;
     const totalPages =
       Number(res?.totalPages ?? res?.data?.totalPages ?? res?.total_pages ?? res?.data?.total_pages) || 0;
     return { items: content as T[], totalPages };
   }
-
-  // Custom shape: { data: T[], totalPages, ... }
   if (Array.isArray(res?.data)) {
     return {
       items: res.data as T[],
       totalPages: Number(res?.totalPages ?? res?.pageCount ?? 0) || 0,
     };
   }
-
-  // Raw array fallback (client-side pagination)
   const full = toArray<T>(res);
   if (!full.length) return { items: [], totalPages: 1 };
   const totalPages = Math.max(1, Math.ceil(full.length / size));
@@ -80,7 +69,6 @@ function normalizePaged<T>(
 /* ---------- defaults ---------- */
 const DEFAULT_FILTERS = { city: null as string | null, range: [0, 2000] as [number, number] };
 
-/* ---------- component ---------- */
 export default function Home() {
   const { hasRole, user } = useAuth();
 
@@ -97,13 +85,18 @@ export default function Home() {
   const [draftRange, setDraftRange] = useState<[number, number]>(DEFAULT_FILTERS.range);
 
   const isTenant = hasRole("TENANT");
-  const blockedKey = user?.usernameOrEmail ? `blocked:${user.usernameOrEmail}` : null;
-  const tenantBlocked = isTenant && blockedKey ? localStorage.getItem(blockedKey) === "true" : false;
 
-  // Για το queryKey, χρησιμοποίησε trimmed πόλη για σταθερότητα
+  const tenantBlocked = isTenant ? getBlockedForUser(user?.usernameOrEmail) : false;
+
+  useEffect(() => {
+    if (user?.usernameOrEmail) {
+      clearBlockedForUser(user.usernameOrEmail);
+    }
+  }, [user?.usernameOrEmail]);
+
   const cityKey = filters.city?.trim() ?? null;
 
-  // Properties με χειροκίνητο URLSearchParams (σίγουρα περνάνε τα φίλτρα)
+  // Properties
   const propsQ = useQuery({
     queryKey: ["public-properties", page, size, cityKey, filters.range[0], filters.range[1]],
     queryFn: () => {
@@ -113,7 +106,6 @@ export default function Home() {
       if (filters.city) params.set("city", filters.city.trim());
       params.set("minPrice", String(filters.range[0]));
       params.set("maxPrice", String(filters.range[1]));
-
       const url = `${ENDPOINTS.properties.publicProps}?${params.toString()}`;
       if (import.meta.env.DEV) console.debug("[propsQ] GET", url);
       return api.get<PagedResponse<Property> | Property[] | any>(url, {
@@ -123,7 +115,6 @@ export default function Home() {
     staleTime: 30_000,
   });
 
-  // Πόλεις από properties (distinct) — ένα “φαρδύ” fetch
   const citiesQ = useQuery({
     queryKey: ["cities-from-properties"],
     queryFn: () => {
@@ -142,7 +133,6 @@ export default function Home() {
     staleTime: 5 * 60_000,
   });
 
-  // Mini queries (applications / viewings)
   type AppItem = { id: number; propertyId?: number; property?: { id?: number } };
   const myAppsQ = useQuery({
     queryKey: ["my-applications-mini"],
@@ -161,7 +151,7 @@ export default function Home() {
     staleTime: 60_000,
   });
 
-  // effects
+  // Effects
   useEffect(() => {
     if (!propsQ.data) return;
     const { totalPages } = normalizePaged<Property>(propsQ.data, page, size);
@@ -169,7 +159,6 @@ export default function Home() {
     if (page > maxPage) setPage(maxPage);
   }, [page, propsQ.data, size]);
 
-  // ✅ reset φίλτρων όταν γίνει logout (user → null)
   useEffect(() => {
     if (!user) {
       setFilters({ ...DEFAULT_FILTERS });
@@ -180,7 +169,6 @@ export default function Home() {
     }
   }, [user]);
 
-  // ✅ reset φίλτρων όταν ακουστεί το event από Header
   useEffect(() => {
     const reset = () => {
       setFilters({ ...DEFAULT_FILTERS });
@@ -193,7 +181,6 @@ export default function Home() {
     return () => window.removeEventListener("app:logout", reset);
   }, []);
 
-  // sets (όχι hooks)
   const appliedSet = (() => {
     const s = new Set<number | string>();
     (myAppsQ.data ?? []).forEach((a) => {
@@ -235,7 +222,7 @@ export default function Home() {
   const hasPrev = page > 0;
   const hasNext = totalPages > 0 ? page + 1 < totalPages : list.length === size;
 
-  // search dialog handlers
+  // Search dialog handlers
   const openSearch = () => {
     setDraftCity(filters.city ?? null);
     setDraftRange([filters.range[0], filters.range[1]]);
@@ -245,7 +232,7 @@ export default function Home() {
     let [min, max] = draftRange;
     min = Math.max(0, Math.min(2000, min));
     max = Math.max(min, Math.min(2000, max));
-    const city = draftCity ? draftCity.trim() : null; // ⬅️ TRIM εδώ
+    const city = draftCity ? draftCity.trim() : null;
     setFilters({ city, range: [min, max] });
     setPage(0);
     setSearchOpen(false);
@@ -260,7 +247,6 @@ export default function Home() {
       className="min-h-screen flex flex-col bg-cover bg-center"
       style={{ backgroundImage: `url(${houseImg})` }}
     >
-      {/* overlay για αναγνωσιμότητα */}
       <div className="flex-1 bg-white/80 backdrop-blur-sm">
         {/* main */}
         <div className="max-w-6xl mx-auto p-4 space-y-4 pb-20">

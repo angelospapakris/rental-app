@@ -3,13 +3,11 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { api } from "@/api/client";
 import { ENDPOINTS } from "@/api/endpoints";
 import Loading from "@/components/Loading";
 import PropertyCard from "@/components/PropertyCard";
 import { StatusBadge } from "@/components/StatusBadge";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -57,7 +55,7 @@ export default function MyProperties() {
 
   const update = useMutation({
     mutationFn: (p: UpdateForm) => api.put(ENDPOINTS.properties.updateProps(p.id), p),
-    // optimistic update για άμεση αίσθηση
+    // Optimistic update
     onMutate: async (next) => {
       await qc.cancelQueries({ queryKey: ["my-properties"] });
       const prev = qc.getQueryData<any>(["my-properties"]);
@@ -216,9 +214,9 @@ function EditDialog({
             >
               <SelectTrigger><SelectValue placeholder="Select type" /></SelectTrigger>
               <SelectContent>
-                <SelectItem value="APARTMENT">APARTMENT</SelectItem>
-                <SelectItem value="HOUSE">HOUSE</SelectItem>
-                <SelectItem value="STUDIO">STUDIO</SelectItem>
+                <SelectItem value="Διαμέρισμα">APARTMENT</SelectItem>
+                <SelectItem value="Μονοκατοικία">HOUSE</SelectItem>
+                <SelectItem value="Γκαρσονιέρα">STUDIO</SelectItem>
               </SelectContent>
             </Select>
             {errors.type && <p className="text-sm text-red-600">{errors.type.message}</p>}

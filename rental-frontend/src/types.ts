@@ -1,7 +1,23 @@
+export type Role = "TENANT" | "OWNER";
+
+export interface RegisterForm {
+  email: string;
+  username: string;
+  password: string;
+  firstname: string;
+  lastname: string;
+  phone?: string;
+  role: Role;
+}
+
 export type PropertyType = "APARTMENT" | "HOUSE" | "STUDIO";
 export type PropertyStatus = "APPROVED" | "PENDING" | "REJECTED";
 export type ApplicationStatus = "PENDING" | "APPROVED" | "REJECTED";
-export type ViewingStatus = "REQUESTED" | "CONFIRMED" | "DECLINED" | "COMPLETED";
+export type ViewingStatus =
+  | "REQUESTED"
+  | "CONFIRMED"
+  | "DECLINED"
+  | "COMPLETED";
 
 export interface Property {
   id: number;
@@ -37,4 +53,4 @@ export type PropertyCreateForm = {
   size: number;
   price: number;
   type: PropertyType;
-}
+};

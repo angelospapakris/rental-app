@@ -6,16 +6,16 @@ import { ENDPOINTS } from "@/api/endpoints";
 import Loading from "@/components/Loading";
 import { Link } from "react-router-dom";
 import type { ApplicationStatus } from "@/types";
-import { Button } from "@/components/ui/button"; // θα το χρησιμοποιήσουμε σαν “badge” appearance
+import { Button } from "@/components/ui/button";
+import { toArray } from "@/lib/utils";
 
-// ---- helpers: ΠΑΝΤΑ επιστρέφει array ----
-function toArray<T>(res: any): T[] {
-  if (!res) return [];
-  if (Array.isArray(res)) return res as T[];
-  if (Array.isArray(res.data)) return res.data as T[];
-  if (Array.isArray(res.content)) return res.content as T[];
-  return [];
-}
+// function toArray<T>(res: any): T[] {
+//   if (!res) return [];
+//   if (Array.isArray(res)) return res as T[];
+//   if (Array.isArray(res.data)) return res.data as T[];
+//   if (Array.isArray(res.content)) return res.content as T[];
+//   return [];
+// }
 
 type AppItem = {
   id: number;
@@ -37,14 +37,14 @@ const STATUS_UI: Record<
 };
 
 export default function MyApplications() {
-  // 1) Οι αιτήσεις μου
+  // 1) My Applications
   const appsQ = useQuery({
     queryKey: ["my-applications"],
     queryFn: () => api.get<any>(ENDPOINTS.applications.tenantApps),
     select: (res) => toArray<AppItem>(res),
   });
 
-  // 2) Τίτλοι ακινήτων
+  // 2) Titles
   const propsQ = useQuery({
     queryKey: ["public-properties-for-titles"],
     queryFn: () => api.get<any>(ENDPOINTS.properties.publicProps),
@@ -52,7 +52,7 @@ export default function MyApplications() {
     staleTime: 5 * 60 * 1000,
   });
 
-  // 3) Χάρτης id -> title
+  // 3) Id -> title
   const titleById = useMemo(() => {
     const m = new Map<number, string>();
     (propsQ.data ?? []).forEach((p) => {
@@ -98,7 +98,7 @@ export default function MyApplications() {
                 )}
               </div>
 
-              {/* Status “σαν κουμπί”, δεξιά */}
+              {/* Status */}
               <Button
                 type="button"
                 role="status"

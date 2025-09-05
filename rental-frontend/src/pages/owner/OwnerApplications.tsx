@@ -1,52 +1,46 @@
-// src/pages/owner/OwnerApplications.tsx
 import { useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/api/client";
 import { ENDPOINTS } from "@/api/endpoints";
 import { Button } from "@/components/ui/button";
 import Loading from "@/components/Loading";
+import { toArray } from "@/lib/utils";
+import type { ApplicationStatus } from "@/types";
 
-// ---- helpers: ΠΑΝΤΑ επιστρέφει array ----
-function toArray<T>(res: any): T[] {
-  if (!res) return [];
-  if (Array.isArray(res)) return res as T[];
-  if (Array.isArray(res.data)) return res.data as T[];
-  if (Array.isArray(res.content)) return res.content as T[];
-  return [];
-}
+// function toArray<T>(res: any): T[] {
+//   if (!res) return [];
+//   if (Array.isArray(res)) return res as T[];
+//   if (Array.isArray(res.data)) return res.data as T[];
+//   if (Array.isArray(res.content)) return res.content as T[];
+//   return [];
+// }
 
-type ApplicationStatus = "PENDING" | "APPROVED" | "REJECTED";
 type AppItem = { id: number; message?: string; status: ApplicationStatus; tenantId: number; propertyId: number; };
 type Property = { id: number; title?: string };
 
-// ---- component ----
 export default function OwnerApplications() {
   const qc = useQueryClient();
 
-  // 1) Αιτήσεις ιδιοκτήτη (JSON σου: { data: [...] })
   const appsQ = useQuery({
     queryKey: ["owner-applications"],
     queryFn: () => api.get<any>(ENDPOINTS.applications.ownerApps),
     select: (res) => toArray<AppItem>(res),
   });
 
-  // 2) Properties για ΤΙΤΛΟΥΣ
-  //    - Προσπαθεί πρώτα /api/properties/my (OWNER only)
-  //    - Αν σκάσει (401/403/500), πέφτει σε /api/properties (public, approved)
   const propsQ = useQuery({
     queryKey: ["owner-or-public-properties-for-titles"],
     queryFn: async () => {
       try {
-        return await api.get<any>(ENDPOINTS.myProps); // /api/properties/my
+        return await api.get<any>(ENDPOINTS.myProps);
       } catch {
-        return await api.get<any>(ENDPOINTS.properties.publicProps); // fallback
+        return await api.get<any>(ENDPOINTS.properties.publicProps);
       }
     },
     select: (res) => toArray<Property>(res),
     staleTime: 5 * 60 * 1000,
   });
 
-  // 3) Χάρτης id -> title
+  // Id -> title
   const titleById = useMemo(() => {
     const m = new Map<number, string>();
     (propsQ.data ?? []).forEach((p) => {
@@ -55,7 +49,7 @@ export default function OwnerApplications() {
     return m;
   }, [propsQ.data]);
 
-  // 4) Approve/Reject
+  // Approve/Reject
   const approve = useMutation({
     mutationFn: (id: number) => api.post(ENDPOINTS.applications.approve(id)),
     onSuccess: () => qc.invalidateQueries({ queryKey: ["owner-applications"] }),

@@ -16,6 +16,7 @@ public class AuthenticationResponseDTO {
     private String firstname;
     private String lastname;
 
+//  private boolean isVerified;
     private String accessToken;
     private String tokenType;
     private long expiresAt;

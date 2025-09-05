@@ -41,10 +41,10 @@ export default function NewApplication() {
     }
 
     try {
-      // propertyId
+      // PropertyId
       await api.post(ENDPOINTS.applications.submitApp(propertyId), { message: f.message });
 
-      // success
+      // Success
       clearBlockedForUser(user?.usernameOrEmail);
       markAppliedLocal(user?.usernameOrEmail, propertyId);
 
@@ -54,7 +54,7 @@ export default function NewApplication() {
     } catch (e) {
       const errAny = e as any;
 
-      // 409: υπάρχει ήδη αίτηση
+      // 409
       if (looksAlreadyExists(errAny)) {
         markAppliedLocal(user?.usernameOrEmail, propertyId!);
         setErr("Έχετε ήδη υποβάλει αίτηση για αυτό το ακίνητο.");

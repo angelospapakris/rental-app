@@ -1,4 +1,3 @@
-// src/pages/owner/OwnerViewings.tsx
 import { useMemo } from "react";
 import {
   useQuery,
@@ -11,15 +10,15 @@ import { ENDPOINTS } from "@/api/endpoints";
 import Loading from "@/components/Loading";
 import { Button } from "@/components/ui/button";
 import type { ViewingStatus } from "@/types";
+import { toArray } from "@/lib/utils";
 
-/* ---- helpers: γύρνα ΠΑΝΤΑ array ---- */
-function toArray<T>(res: any): T[] {
-  if (!res) return [];
-  if (Array.isArray(res)) return res as T[];
-  if (Array.isArray(res?.data)) return res.data as T[];
-  if (Array.isArray(res?.content)) return res.content as T[];
-  return [];
-}
+// function toArray<T>(res: any): T[] {
+//   if (!res) return [];
+//   if (Array.isArray(res)) return res as T[];
+//   if (Array.isArray(res?.data)) return res.data as T[];
+//   if (Array.isArray(res?.content)) return res.content as T[];
+//   return [];
+// }
 
 /* ---- types ---- */
 type Viewing = {
@@ -34,14 +33,14 @@ type Property = { id: number; title?: string };
 export default function OwnerViewings() {
   const qc = useQueryClient();
 
-  // 1) Αιτήματα προβολών του ιδιοκτήτη
+  // 1) Owner's viewing requests
   const viewingsQ = useQuery({
     queryKey: ["owner-viewings"],
     queryFn: () => api.get<any>(ENDPOINTS.viewings.ownerViews),
     select: (res) => toArray<Viewing>(res),
   });
 
-  // 2) Τίτλοι ακινήτων: /my -> fallback /public
+  // 2) Titles from public properties
   const propsQ = useQuery({
     queryKey: ["properties-for-titles"],
     queryFn: async () => {
@@ -55,7 +54,7 @@ export default function OwnerViewings() {
     staleTime: 5 * 60 * 1000,
   });
 
-  // 3) id -> title από τα (my/public) properties
+  // 3) Id -> title
   const baseTitleMap = useMemo(() => {
     const m = new Map<number, string>();
     for (const p of propsQ.data ?? []) {
@@ -64,14 +63,13 @@ export default function OwnerViewings() {
     return m;
   }, [propsQ.data]);
 
-  // 4) Αν κάποιο viewing δεν έχει τίτλο ακόμη, φέρε το property per-id (robust fallback)
   const missingIds = useMemo(() => {
     const list = viewingsQ.data ?? [];
     const ids: number[] = [];
     for (const v of list) {
       if (!baseTitleMap.has(v.propertyId)) ids.push(v.propertyId);
     }
-    // μοναδικά
+    // Unique
     return Array.from(new Set(ids));
   }, [viewingsQ.data, baseTitleMap]);
 
@@ -89,9 +87,9 @@ export default function OwnerViewings() {
     })),
   });
 
-  // 5) Συγχώνευση τίτλων από όλα τα sources
+  // 5) Merge titles
   const titleById = useMemo(() => {
-    const m = new Map(baseTitleMap); // ξεκινάει από my/public
+    const m = new Map(baseTitleMap);
     missingPropsQueries.forEach((q, i) => {
       const id = missingIds[i];
       const p = q.data as Property | undefined;
@@ -133,7 +131,7 @@ export default function OwnerViewings() {
         list.map((v) => {
           const title = titleById.get(v.propertyId) || `Ακίνητο ${v.propertyId}`;
 
-          // enable/disable βάσει status
+          // Enable/disable according to status
           const confirmDisabled  = v.status !== "REQUESTED" || confirm.isPending;
           const declineDisabled  = v.status !== "REQUESTED" || decline.isPending;
           const completeDisabled = v.status !== "CONFIRMED" || complete.isPending;

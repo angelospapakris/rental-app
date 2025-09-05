@@ -49,10 +49,10 @@ export default function NewViewing() {
     }
 
     try {
-         // propertyId
+         // PropertyId
          await api.post(ENDPOINTS.viewings.requestViews(propertyId), { notes: f.notes });
 
-      // success
+      // Success
       clearBlockedForUser(user?.usernameOrEmail);
       markViewingLocal(user?.usernameOrEmail, propertyId);
 
@@ -62,14 +62,14 @@ export default function NewViewing() {
     } catch (e) {
       const errAny: any = e;
 
-      // 409: υπάρχει ήδη αίτημα για αυτό το ακίνητο
+      // 409
       if (looksAlreadyExists(errAny)) {
         markViewingLocal(user?.usernameOrEmail, propertyId!);
         setErr("Έχετε ήδη υποβάλει αίτημα προβολής για αυτό το ακίνητο.");
         return;
       }
 
-      // Unverified: γράψε flag ώστε το Home να «γκριζάρει» και μπλόκαρε με μήνυμα
+      // Unverified
       if (looksLikeUnverified(errAny)) {
         setBlockedForUser(user?.usernameOrEmail, true);
         setErr("Ο λογαριασμός δεν είναι επαληθευμένος από διαχειριστή.");

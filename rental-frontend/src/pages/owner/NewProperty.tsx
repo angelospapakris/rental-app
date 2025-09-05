@@ -48,7 +48,7 @@ export default function NewProperty() {
     try {
       await api.post(ENDPOINTS.properties.createProps, f);
       setMsg("Η καταχώριση υποβλήθηκε και αναμένεται έγκριση από admin.");
-      setTimeout(() => nav("/owner/properties"), 900);
+      setTimeout(() => nav("/myProps"), 900);
     } catch (e: any) {
       const data = e?.response?.data;
       const message = data?.message || "Κάτι πήγε στραβά. Δοκιμάστε ξανά.";

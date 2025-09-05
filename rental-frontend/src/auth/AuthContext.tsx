@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { api } from "@/api/client";
 import { ENDPOINTS } from "@/api/endpoints";
 import { jwtDecode } from "jwt-decode";
+import { clearBlockedForUser } from "@/lib/verification";
 
 type Role = "ADMIN" | "OWNER" | "TENANT";
 type Decoded = { sub: string; roles?: unknown; exp?: number; [k: string]: any };
@@ -26,13 +27,13 @@ const Ctx = createContext<AuthCtx>(null!);
 const isJwt = (t: unknown): t is string =>
   typeof t === "string" && /^[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+$/.test(t);
 
-// Normalize roles => ADMIN | OWNER | TENANT (no-op if already correct)
+// Normalize roles => ADMIN | OWNER | TENANT
 function normalizeRoles(input?: unknown): Role[] {
   if (!Array.isArray(input)) return [];
   return input
     .map(String)
-    .map(r => r.toUpperCase())
-    .map(r => (r.startsWith("ROLE_") ? r.slice(5) : r))
+    .map((r) => r.toUpperCase())
+    .map((r) => (r.startsWith("ROLE_") ? r.slice(5) : r))
     .filter((r): r is Role => r === "ADMIN" || r === "OWNER" || r === "TENANT");
 }
 
@@ -62,7 +63,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const login = async (usernameOrEmail: string, password: string) => {
-    // backend may return { token } or { accessToken } or { jwt }
     const res = await api.post<Record<string, any>>(ENDPOINTS.auth.login, {
       usernameOrEmail,
       password,
@@ -77,6 +77,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
     localStorage.setItem("token", candidate);
     const d = jwtDecode<Decoded>(candidate);
+
+    if (usernameOrEmail) {
+      clearBlockedForUser(usernameOrEmail);
+    }
+
     setUser({
       usernameOrEmail: String(d.sub),
       roles: normalizeRoles(d.roles),
