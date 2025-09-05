@@ -10,6 +10,30 @@ export interface RegisterForm {
   role: Role;
 }
 
+export type AdminUser = {
+  id: number;
+  email: string;
+  roles?: string[];
+  isActive?: boolean;
+  isVerified?: boolean;
+  firstname?: string;
+  lastname?: string;
+};
+
+export type BoolFilter = "" | "true" | "false";
+
+export const RoleOptions = [
+  { value: "", label: "Ρόλος: Όλοι" },
+  { value: "OWNER", label: "Ιδιοκτήτης" },   // <-- αν backend = LANDLORD, άλλαξέ το
+  { value: "TENANT", label: "Ενοικιαστής" },
+] as const;
+
+export const RoleLabel: Record<string, string> = {
+  OWNER: "Ιδιοκτήτης", // <-- αν backend = LANDLORD, άλλαξέ το
+  TENANT: "Ενοικιαστής",
+  ADMIN: "Διαχειριστής",
+};
+
 export type PropertyType = "APARTMENT" | "HOUSE" | "STUDIO";
 export type PropertyStatus = "APPROVED" | "PENDING" | "REJECTED";
 export type ApplicationStatus = "PENDING" | "APPROVED" | "REJECTED";

@@ -104,7 +104,7 @@ export default function Register() {
           </div>
 
           <div>
-            <Label>Ιδιότητα</Label>
+            <Label>Ρόλος</Label>
             <select
               className="mt-1 block w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
               {...register("role")}
