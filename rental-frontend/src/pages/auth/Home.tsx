@@ -31,42 +31,49 @@ import houseImg from "@/assets/house.png";
 import { getBlockedForUser, clearBlockedForUser } from "@/lib/verification";
 import { toArray } from "@/lib/utils";
 
-// /* ---------- helpers ---------- */
-// const toArray = <T,>(res: any): T[] =>
-//   Array.isArray(res)
-//     ? res
-//     : Array.isArray(res?.data)
-//     ? res.data
-//     : Array.isArray(res?.content)
-//     ? res.content
-//     : [];
+/* ---------- Normalize ---------- */
+type PagedMode = "backend-meta" | "array-local";
 
 function normalizePaged<T>(
   res: PagedResponse<T> | T[] | any,
   page: number,
   size: number
-): { items: T[]; totalPages: number } {
+): { items: T[]; totalPages: number; totalItems: number; mode: PagedMode } {
   if (res && (Array.isArray(res?.content) || Array.isArray(res?.data?.content))) {
     const content = Array.isArray(res.content) ? res.content : res.data.content;
     const totalPages =
       Number(res?.totalPages ?? res?.data?.totalPages ?? res?.total_pages ?? res?.data?.total_pages) || 0;
-    return { items: content as T[], totalPages };
+    const totalItems =
+      Number(
+        res?.totalElements ??
+          res?.data?.totalElements ??
+          res?.total_items ??
+          res?.data?.total_items ??
+          content.length
+      );
+    return { items: content as T[], totalPages, totalItems, mode: "backend-meta" };
   }
-  if (Array.isArray(res?.data)) {
-    return {
-      items: res.data as T[],
-      totalPages: Number(res?.totalPages ?? res?.pageCount ?? 0) || 0,
-    };
-  }
-  const full = toArray<T>(res);
-  if (!full.length) return { items: [], totalPages: 1 };
-  const totalPages = Math.max(1, Math.ceil(full.length / size));
+
+  const full = Array.isArray(res)
+    ? (res as T[])
+    : Array.isArray(res?.data)
+    ? (res.data as T[])
+    : Array.isArray(res?.content)
+    ? (res.content as T[])
+    : toArray<T>(res);
+
+  const totalItems = full.length;
+  if (!totalItems) return { items: [], totalPages: 1, totalItems: 0, mode: "array-local" };
+
+  const totalPages = Math.max(1, Math.ceil(totalItems / size));
   const from = Math.max(0, page * size);
-  const to = Math.min(full.length, from + size);
-  return { items: full.slice(from, to), totalPages };
+  const to = Math.min(totalItems, from + size);
+  return { items: full.slice(from, to), totalPages, totalItems, mode: "array-local" };
 }
 
-/* ---------- defaults ---------- */
+
+
+/* ---------- Defaults ---------- */
 const DEFAULT_FILTERS = { city: null as string | null, range: [0, 2000] as [number, number] };
 
 export default function Home() {
@@ -85,7 +92,6 @@ export default function Home() {
   const [draftRange, setDraftRange] = useState<[number, number]>(DEFAULT_FILTERS.range);
 
   const isTenant = hasRole("TENANT");
-
   const tenantBlocked = isTenant ? getBlockedForUser(user?.usernameOrEmail) : false;
 
   useEffect(() => {
@@ -98,20 +104,18 @@ export default function Home() {
 
   // Properties
   const propsQ = useQuery({
-    queryKey: ["public-properties", page, size, cityKey, filters.range[0], filters.range[1]],
+    queryKey: ["public-properties", cityKey, filters.range[0], filters.range[1]],
     queryFn: () => {
       const params = new URLSearchParams();
-      params.set("page", String(page));
-      params.set("size", String(size));
       if (filters.city) params.set("city", filters.city.trim());
       params.set("minPrice", String(filters.range[0]));
       params.set("maxPrice", String(filters.range[1]));
+
       const url = `${ENDPOINTS.properties.publicProps}?${params.toString()}`;
       if (import.meta.env.DEV) console.debug("[propsQ] GET", url);
-      return api.get<PagedResponse<Property> | Property[] | any>(url, {
-        headers: { "Cache-Control": "no-cache" },
-      });
+      return api.get(url, { headers: { "Cache-Control": "no-cache" } });
     },
+    keepPreviousData: true,
     staleTime: 30_000,
   });
 
@@ -154,8 +158,15 @@ export default function Home() {
   // Effects
   useEffect(() => {
     if (!propsQ.data) return;
-    const { totalPages } = normalizePaged<Property>(propsQ.data, page, size);
-    const maxPage = Math.max(0, (totalPages || 1) - 1);
+    const { totalPages, totalItems, mode } = normalizePaged<Property>(propsQ.data, page, size);
+
+    // Αν δεν έχουμε αξιόπιστα totals (backend-no-meta), μην "μαζεύεις" τη σελίδα.
+    if (mode === "backend-no-meta") return;
+
+    const effectiveTotalPages =
+      Math.max(Number(totalPages || 0), totalItems ? Math.ceil(totalItems / size) : 0) || 1;
+
+    const maxPage = Math.max(0, effectiveTotalPages - 1);
     if (page > maxPage) setPage(maxPage);
   }, [page, propsQ.data, size]);
 
@@ -209,18 +220,29 @@ export default function Home() {
       ? localStorage.getItem(`viewreq:${user.usernameOrEmail}:${pid}`) === "true"
       : false;
 
-  // early returns
+  // Early returns
   if (propsQ.isLoading) return <Loading />;
   if (propsQ.error) return <p className="p-6 text-red-600">{(propsQ.error as Error).message}</p>;
 
-  const { items: list, totalPages } = normalizePaged<Property>(propsQ.data, page, size);
+  const { items: list, totalPages, totalItems, mode } = normalizePaged<Property>(propsQ.data, page, size);
+
+  const effectiveTotalPages =
+    mode === "backend-meta"
+      ? (Math.max(Number(totalPages || 0), totalItems ? Math.ceil(totalItems / size) : 0) || 1)
+      : mode === "array-local"
+      ? Math.max(1, Math.ceil(totalItems / size))
+      : 0; // backend-no-meta: άγνωστο
+
+  const hasPrev = page > 0;
+  const hasNext =
+    mode === "backend-no-meta"
+      ? list.length === size // αν γυρίζει ακριβώς size, υπάρχει και άλλη σελίδα
+      : page + 1 < effectiveTotalPages;
+
   const cityOptions =
     citiesQ.data?.length && citiesQ.data.length > 0
       ? citiesQ.data
       : Array.from(new Set(list.map((p) => p.city && String(p.city).trim()).filter(Boolean)));
-
-  const hasPrev = page > 0;
-  const hasNext = totalPages > 0 ? page + 1 < totalPages : list.length === size;
 
   // Search dialog handlers
   const openSearch = () => {
@@ -399,7 +421,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-end gap-2">
           <span className="text-sm text-muted-foreground mr-auto">
             Σελίδα {page + 1}
-            {totalPages > 0 ? ` από ${totalPages}` : ""}{" "}
+            {mode !== "backend-no-meta" ? ` από ${effectiveTotalPages}` : ""}{" "}
             {filters.city ? ` • ${filters.city}` : ""} • {filters.range[0]}–{filters.range[1]} €
           </span>
           <Button variant="outline" disabled={!hasPrev} onClick={() => setPage((p) => Math.max(0, p - 1))}>

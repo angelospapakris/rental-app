@@ -9,9 +9,7 @@
       <change beforePath="$PROJECT_DIR$/rental-backend/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-backend/logs/hikari.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/hikari.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" beforeDir="false" afterPath="$PROJECT_DIR$/rental-backend/logs/tomcat.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/admin/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/admin/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rental-frontend/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/rental-frontend/src/pages/auth/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
