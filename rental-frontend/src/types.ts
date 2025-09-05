@@ -88,3 +88,12 @@ export type PropertyCreateForm = {
   price: number;
   type: PropertyType;
 };
+
+type PageResp = {
+  content: any[];
+  totalElements: number;
+  totalPages: number;
+  numberOfElements: number;
+  currentPage: number;
+  pageSize: number;
+} | any;

@@ -37,7 +37,8 @@ export default function OwnerViewings() {
   const viewingsQ = useQuery({
     queryKey: ["owner-viewings"],
     queryFn: () => api.get<any>(ENDPOINTS.viewings.ownerViews),
-    select: (res) => toArray<Viewing>(res),
+    select: (res) =>
+      toArray<Viewing>(res).sort((a, b) => (Number(b.id) || 0) - (Number(a.id) || 0)),
   });
 
   // 2) Titles from public properties

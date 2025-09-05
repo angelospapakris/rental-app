@@ -24,7 +24,8 @@ export default function OwnerApplications() {
   const appsQ = useQuery({
     queryKey: ["owner-applications"],
     queryFn: () => api.get<any>(ENDPOINTS.applications.ownerApps),
-    select: (res) => toArray<AppItem>(res),
+    select: (res) =>
+      toArray<AppItem>(res).sort((a, b) => (Number(b.id) || 0) - (Number(a.id) || 0)),
   });
 
   const propsQ = useQuery({

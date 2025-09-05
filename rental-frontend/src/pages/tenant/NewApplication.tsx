@@ -90,7 +90,7 @@ export default function NewApplication() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-4">
-      <h1 className="text-2xl font-semibold">Νέα αίτηση</h1>
+      <h1 className="text-2xl font-semibold">Νέα αίτημα ενοικίασης</h1>
 
       {!propertyId && (
         <div className="rounded-xl border border-amber-300 bg-amber-50 text-amber-800 px-3 py-2 text-sm">
