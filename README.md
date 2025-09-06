@@ -1,16 +1,35 @@
 # rental-system
-A full-stack rental system application using Java (Spring Boot, Gradle) 
-and React with TypeScript
 
-The system is a rental platform that connects property owners, tenants and the administrator:
+A full-stack rental platform connecting owners, tenants and admin.
 
-Owners can list properties for rent.
-Tenants can search for approved properties, submit rental applications and request viewings.
-The administrator approves new listings, verifies tenants and oversees the overall operation of the system.
+Owners list properties for rent (enter pending, need admin approval).
 
-To run this app:
+Tenants search approved properties, submit rental applications, and request viewings.
 
-cd rental-frontend
-npm run dev:all
+Admin approves new listings, verifies tenants, manages users and overall operations.
+
+Tech:
+
+[React & TypeScript] – SPA with modern tooling
+
+[React Router] – pages & navigation
+
+[React Query] – data fetching, cache & mutations
+
+[shadcn/ui] & [Tailwind CSS] – UI components & styling
+
+[Spring Boot] – backend REST API
+
+[Gradle] – build & dependency management
+
+[Spring Security + JWT] – authentication & authorization
+
+[MySQL] – relational database
+
+[Hibernate JPA] – ORM & DB access
+
+[MapStruct] – DTO ↔ Entity mapping
+
+[OpenAPI/Swagger] – API docs & live testing
 
 
