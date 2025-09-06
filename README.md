@@ -6,7 +6,7 @@ Owners list properties for rent (enter pending, need admin approval).
 Tenants search approved properties, submit rental applications, and request viewings.
 Admin approves new listings, verifies tenants, manages users and overall operations.
 
-Tech:
+# Tech:
 
 [React & TypeScript] – SPA with modern tooling
 [React Router] – pages & navigation
@@ -20,8 +20,8 @@ Tech:
 [MapStruct] – DTO ↔ Entity mapping
 [OpenAPI/Swagger] – API docs & live testing
 
-Installation & Run
-
+# Installation & Run
+`
 {
   "scripts": {
     "dev": "vite",
@@ -29,15 +29,18 @@ Installation & Run
   },
   "devDependencies": { "concurrently": "^9.0.0" }
 }
-
-# Frontend
+`
+Frontend
+`
 cd rental-frontend
 npm install
 npm run dev:all
+`
 
-Run as Admin
+# Run as Admin
 
-username : admin, password: 12345
+username : admin
+password: 12345
 
 
 
