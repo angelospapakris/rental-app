@@ -2,7 +2,7 @@
 
 A full-stack rental platform connecting owners, tenants and admin. `<br>`
 
-Owners list properties for rent (enter pending, need admin approval). **
+**Owners list properties for rent (enter pending, need admin approval).**
 Tenants search approved properties, submit rental applications, and request viewings. `<br>`
 Admin approves new listings, verifies tenants, manages users and overall operations. `<br>`
 
