@@ -1,16 +1,16 @@
 # rental-system
 
-A full-stack rental platform connecting owners, tenants and admin.
+A full-stack rental platform connecting owners, tenants and admin. `<br>`
 
-Owners list properties for rent (enter pending, need admin approval).
-Tenants search approved properties, submit rental applications, and request viewings.
-Admin approves new listings, verifies tenants, manages users and overall operations.
+Owners list properties for rent (enter pending, need admin approval). `<br>`
+Tenants search approved properties, submit rental applications, and request viewings. `<br>`
+Admin approves new listings, verifies tenants, manages users and overall operations. `<br>`
 
 # Tech:
 
-[React & TypeScript] – SPA with modern tooling
-[React Router] – pages & navigation
-[React Query] – data fetching, cache & mutations
+[React & TypeScript] – SPA with modern tooling `<br>`
+[React Router] – pages & navigation `<br>`
+[React Query] – data fetching, cache & mutations `<br>`
 [shadcn/ui] & [Tailwind CSS] – UI components & styling
 [Spring Boot] – backend REST API
 [Gradle] – build & dependency management
