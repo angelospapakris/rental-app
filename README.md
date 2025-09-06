@@ -21,7 +21,7 @@ Admin approves new listings, verifies tenants, manages users and overall operati
 [OpenAPI/Swagger] – API docs & live testing
 
 # Installation & Run
-`
+```
 {
   "scripts": {
     "dev": "vite",
@@ -29,13 +29,13 @@ Admin approves new listings, verifies tenants, manages users and overall operati
   },
   "devDependencies": { "concurrently": "^9.0.0" }
 }
-`
+```
 Frontend
-`
+```
 cd rental-frontend
 npm install
 npm run dev:all
-`
+```
 
 # Run as Admin
 
