@@ -20,8 +20,18 @@ Admin approves new listings, verifies tenants, manages users and overall operati
 [MapStruct] – DTO ↔ Entity mapping<br>
 [OpenAPI/Swagger] – API docs & live testing<br>
 
+# Environment
+
+**Backend (application-*.properties):**<br>
+DB: spring.datasource.url=jdbc:mysql://localhost:3306/rentalsystemdb<br>
+DB user/pass: spring.datasource.username, spring.datasource.password<br>
+**Ports (defaults):**<br>
+API: http://localhost:8080
+Frontend (Vite): http://localhost:5173<br>
+Swagger UI: http://localhost:8080/swagger-ui/index.html<br>
+
 # Installation & Run
-Add this script to rental-frontend/package.json<br>
+Add dev-all script to rental-frontend/package.json<br>
 **Windows:**
 ```
 {
