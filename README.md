@@ -1,6 +1,6 @@
 # rental-system
 
-A full-stack rental platform connecting owners, tenants and admin. 
+A full-stack rental platform connecting owners, tenants and admin.<br>
 
 Owners list properties for rent (enter pending, need admin approval).
 Tenants search approved properties, submit rental applications, and request viewings. 
@@ -21,7 +21,7 @@ Admin approves new listings, verifies tenants, manages users and overall operati
 [OpenAPI/Swagger] – API docs & live testing
 
 # Installation & Run
-Add this script at rental-frontend/package.json
+Add this script to rental-frontend/package.json
 **Windows:**
 ```
 {
