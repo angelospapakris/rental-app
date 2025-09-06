@@ -22,11 +22,8 @@ Admin approves new listings, verifies tenants, manages users and overall operati
 
 # Environment
 
-**Backend (application-*.properties):**<br>
-DB: spring.datasource.url=jdbc:mysql://localhost:3306/rentalsystemdb<br>
-DB user/pass: spring.datasource.username, spring.datasource.password<br>
 **Ports (defaults):**<br>
-API: http://localhost:8080
+API: http://localhost:8080<br>
 Frontend (Vite): http://localhost:5173<br>
 Swagger UI: http://localhost:8080/swagger-ui/index.html<br>
 
