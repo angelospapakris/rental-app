@@ -6,7 +6,7 @@ Owners list properties for rent (enter pending, need admin approval).<br>
 Tenants search approved properties, submit rental applications, and request viewings.<br> 
 Admin approves new listings, verifies tenants, manages users and overall operations.<br> 
 
-# Tech:
+# Tech
 
 [React & TypeScript] – SPA with modern tooling<br> 
 [React Router] – pages & navigation<br> 
@@ -27,7 +27,7 @@ API: http://localhost:8080<br>
 Frontend (Vite): http://localhost:5173<br>
 Swagger UI: http://localhost:8080/swagger-ui/index.html<br>
 
-# Installation
+# Installation & Run
 Add dev-all script to rental-frontend/package.json<br>
 **Windows:**
 ```
