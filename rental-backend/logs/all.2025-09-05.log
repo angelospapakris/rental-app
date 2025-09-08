@@ -1,0 +1,375 @@
+2025-09-05 11:38:18 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 11:38:18 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 17316 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 11:38:18 INFO  - The following 1 profile is active: "test"
+2025-09-05 11:38:18 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 11:38:18 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 11:38:19 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 11:38:19 INFO  - Finished Spring Data repository scanning in 87 ms. Found 5 JPA repository interfaces.
+2025-09-05 11:38:20 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 11:38:20 INFO  - Root WebApplicationContext: initialization completed in 2033 ms
+2025-09-05 11:38:20 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 11:38:20 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 11:38:21 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 11:38:22 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 11:38:22 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 11:38:22 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 11:38:23 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 11:38:23 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 11:38:23 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 11:38:24 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 11:38:24 INFO  - LiveReload server is running on port 35729
+2025-09-05 11:38:24 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 11:38:24 INFO  - Started RentalSystemApplication in 6.884 seconds (process running for 7.302)
+2025-09-05 11:38:25 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 11:38:25 INFO  - Completed initialization in 2 ms
+2025-09-05 12:08:06 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 12:08:24 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 12:08:31 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 12:24:55 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 12:27:38 WARN  - Expired token at path=/api/auth/login
+2025-09-05 12:31:23 WARN  - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/users/13/unverify.]
+2025-09-05 12:34:42 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 12:45:30 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 12:50:36 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 12:54:42 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 13:09:16 WARN  - Resolved [java.lang.IllegalArgumentException: User is not TENANT.]
+2025-09-05 13:11:02 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 13:11:23 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 13:21:53 WARN  - Resolved [java.lang.IllegalArgumentException: User is not TENANT.]
+2025-09-05 13:38:50 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 13:38:50 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 33748 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 13:38:50 INFO  - The following 1 profile is active: "test"
+2025-09-05 13:38:50 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 13:38:50 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 13:38:51 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 13:38:51 INFO  - Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2025-09-05 13:38:52 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 13:38:52 INFO  - Root WebApplicationContext: initialization completed in 1815 ms
+2025-09-05 13:38:52 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 13:38:52 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 13:38:53 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 13:38:54 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 13:38:54 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 13:38:55 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 13:38:55 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 13:38:55 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 13:38:55 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 13:38:56 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 13:38:57 INFO  - LiveReload server is running on port 35729
+2025-09-05 13:38:57 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 13:38:57 INFO  - Started RentalSystemApplication in 6.741 seconds (process running for 7.125)
+2025-09-05 13:38:57 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 13:38:57 INFO  - Completed initialization in 1 ms
+2025-09-05 13:39:21 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 13:45:41 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 13:45:41 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 34404 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 13:45:41 INFO  - The following 1 profile is active: "test"
+2025-09-05 13:45:41 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 13:45:41 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 13:45:42 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 13:45:42 INFO  - Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
+2025-09-05 13:45:43 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 13:45:43 INFO  - Root WebApplicationContext: initialization completed in 2185 ms
+2025-09-05 13:45:44 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 13:45:44 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 13:45:44 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 13:45:45 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 13:45:45 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 13:45:46 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 13:45:46 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 13:45:46 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 13:45:46 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 13:45:47 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 13:45:47 INFO  - LiveReload server is running on port 35729
+2025-09-05 13:45:47 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 13:45:47 INFO  - Started RentalSystemApplication in 6.601 seconds (process running for 6.948)
+2025-09-05 13:46:15 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 13:46:15 INFO  - Completed initialization in 2 ms
+2025-09-05 13:47:30 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 13:58:16 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 13:58:16 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 13428 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 13:58:16 INFO  - The following 1 profile is active: "test"
+2025-09-05 13:58:16 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 13:58:16 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 13:58:17 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 13:58:17 INFO  - Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+2025-09-05 13:58:18 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 13:58:18 INFO  - Root WebApplicationContext: initialization completed in 2469 ms
+2025-09-05 13:58:19 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 13:58:19 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 13:58:19 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 13:58:21 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 13:58:21 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 13:58:22 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 13:58:23 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 13:58:23 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 13:58:23 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 13:58:24 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 13:58:25 INFO  - LiveReload server is running on port 35729
+2025-09-05 13:58:25 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 13:58:25 INFO  - Started RentalSystemApplication in 9.653 seconds (process running for 10.223)
+2025-09-05 14:00:49 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 14:00:49 INFO  - Completed initialization in 2 ms
+2025-09-05 14:01:42 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 14:07:30 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 14:07:38 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 14:13:18 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 14:23:27 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 14:49:18 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 14:49:18 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 21216 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 14:49:18 INFO  - The following 1 profile is active: "test"
+2025-09-05 14:49:18 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 14:49:18 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 14:49:19 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 14:49:19 INFO  - Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2025-09-05 14:49:20 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 14:49:20 INFO  - Root WebApplicationContext: initialization completed in 1723 ms
+2025-09-05 14:49:20 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 14:49:21 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 14:49:21 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 14:49:22 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 14:49:22 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 14:49:22 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 14:49:23 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 14:49:23 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 14:49:23 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 14:49:24 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 14:49:24 INFO  - LiveReload server is running on port 35729
+2025-09-05 14:49:24 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 14:49:24 INFO  - Started RentalSystemApplication in 6.366 seconds (process running for 6.771)
+2025-09-05 14:49:30 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 14:49:30 INFO  - Completed initialization in 1 ms
+2025-09-05 15:00:14 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 15:00:30 WARN  - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/users/1/verify9.]
+2025-09-05 15:01:50 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 15:02:07 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 15:06:23 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 15:06:23 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 9828 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 15:06:23 INFO  - The following 1 profile is active: "test"
+2025-09-05 15:06:23 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 15:06:23 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 15:06:24 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 15:06:24 INFO  - Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+2025-09-05 15:06:24 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 15:06:24 INFO  - Root WebApplicationContext: initialization completed in 1793 ms
+2025-09-05 15:06:25 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 15:06:25 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 15:06:25 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 15:06:26 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 15:06:26 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 15:06:27 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 15:06:27 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 15:06:28 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 15:06:28 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 15:06:28 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 15:06:28 INFO  - LiveReload server is running on port 35729
+2025-09-05 15:06:29 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 15:06:29 INFO  - Started RentalSystemApplication in 6.401 seconds (process running for 6.734)
+2025-09-05 15:06:29 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 15:06:29 INFO  - Completed initialization in 2 ms
+2025-09-05 15:07:09 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 15:12:36 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 15:12:36 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 21544 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 15:12:36 INFO  - The following 1 profile is active: "test"
+2025-09-05 15:12:36 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 15:12:36 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 15:12:37 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 15:12:37 INFO  - Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
+2025-09-05 15:12:38 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 15:12:38 INFO  - Root WebApplicationContext: initialization completed in 1954 ms
+2025-09-05 15:12:38 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 15:12:38 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 15:12:39 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 15:12:40 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 15:12:40 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 15:12:40 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 15:12:41 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 15:12:41 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 15:12:41 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 15:12:41 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 15:12:42 INFO  - LiveReload server is running on port 35729
+2025-09-05 15:12:42 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 15:12:42 INFO  - Started RentalSystemApplication in 6.456 seconds (process running for 6.792)
+2025-09-05 15:12:42 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 15:12:42 INFO  - Completed initialization in 1 ms
+2025-09-05 15:57:44 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 15:57:44 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 2492 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 15:57:44 INFO  - The following 1 profile is active: "test"
+2025-09-05 15:57:44 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 15:57:44 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 15:57:45 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 15:57:45 INFO  - Finished Spring Data repository scanning in 58 ms. Found 5 JPA repository interfaces.
+2025-09-05 15:57:46 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 15:57:46 INFO  - Root WebApplicationContext: initialization completed in 1711 ms
+2025-09-05 15:57:46 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 15:57:46 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 15:57:47 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 15:57:48 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 15:57:48 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 15:57:48 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 15:57:49 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 15:57:49 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 15:57:49 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 15:57:49 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 15:57:50 INFO  - LiveReload server is running on port 35729
+2025-09-05 15:57:50 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 15:57:50 INFO  - Started RentalSystemApplication in 6.054 seconds (process running for 6.504)
+2025-09-05 15:58:06 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 15:58:06 INFO  - Completed initialization in 1 ms
+2025-09-05 16:00:01 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 16:00:01 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 2708 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 16:00:01 INFO  - The following 1 profile is active: "test"
+2025-09-05 16:00:01 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 16:00:01 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 16:00:02 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 16:00:02 INFO  - Finished Spring Data repository scanning in 60 ms. Found 5 JPA repository interfaces.
+2025-09-05 16:00:02 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 16:00:02 INFO  - Root WebApplicationContext: initialization completed in 1867 ms
+2025-09-05 16:00:03 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 16:00:03 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 16:00:03 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 16:00:04 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 16:00:05 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 16:00:05 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 16:00:06 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 16:00:06 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 16:00:06 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 16:00:06 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 16:00:07 INFO  - LiveReload server is running on port 35729
+2025-09-05 16:00:07 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 16:00:07 INFO  - Started RentalSystemApplication in 6.631 seconds (process running for 7.054)
+2025-09-05 16:00:07 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 16:00:07 INFO  - Completed initialization in 2 ms
+2025-09-05 17:13:44 WARN  - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<gr.ath.ds.rentsystem.util.filters.Paginated<gr.ath.ds.rentsystem.dto.UserResponseDTO>> gr.ath.ds.rentsystem.rest.UserController.search(gr.ath.ds.rentsystem.util.filters.UserFilters): [Field error in object 'userFilters' on field 'role': rejected value [tenant]; codes [typeMismatch.userFilters.role,typeMismatch.role,typeMismatch.gr.ath.ds.rentsystem.util.enums.RoleType,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userFilters.role,role]; arguments []; default message [role]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'gr.ath.ds.rentsystem.util.enums.RoleType' for property 'role'; Failed to convert from type [java.lang.String] to type [gr.ath.ds.rentsystem.util.enums.RoleType] for value [tenant]]] ]
+2025-09-05 17:16:34 WARN  - Resolved [java.lang.IllegalArgumentException: User is not TENANT.]
+2025-09-05 17:54:06 WARN  - Resolved [java.lang.IllegalArgumentException: User is not TENANT.]
+2025-09-05 17:55:15 WARN  - Resolved [java.lang.IllegalArgumentException: User is not TENANT.]
+2025-09-05 17:58:18 WARN  - Resolved [java.lang.IllegalArgumentException: User is not TENANT.]
+2025-09-05 18:12:11 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 18:12:11 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 18764 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 18:12:11 INFO  - The following 1 profile is active: "test"
+2025-09-05 18:12:11 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 18:12:11 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 18:12:12 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 18:12:12 INFO  - Finished Spring Data repository scanning in 93 ms. Found 5 JPA repository interfaces.
+2025-09-05 18:12:13 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 18:12:13 INFO  - Root WebApplicationContext: initialization completed in 1996 ms
+2025-09-05 18:12:13 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 18:12:13 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 18:12:14 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 18:12:15 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 18:12:15 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 18:12:15 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 18:12:16 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 18:12:16 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 18:12:16 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 18:12:17 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 18:12:17 INFO  - LiveReload server is running on port 35729
+2025-09-05 18:12:17 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 18:12:18 INFO  - Started RentalSystemApplication in 6.766 seconds (process running for 7.104)
+2025-09-05 18:13:50 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 18:13:50 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 17644 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 18:13:50 INFO  - The following 1 profile is active: "test"
+2025-09-05 18:13:50 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 18:13:50 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 18:13:52 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 18:13:52 INFO  - Finished Spring Data repository scanning in 70 ms. Found 5 JPA repository interfaces.
+2025-09-05 18:13:52 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 18:13:53 INFO  - Root WebApplicationContext: initialization completed in 2234 ms
+2025-09-05 18:13:53 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 18:13:53 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 18:13:53 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 18:13:55 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 18:13:55 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 18:13:55 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 18:13:56 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 18:13:56 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 18:13:56 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 18:13:56 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 18:13:57 INFO  - LiveReload server is running on port 35729
+2025-09-05 18:13:57 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 18:13:57 INFO  - Started RentalSystemApplication in 7.3 seconds (process running for 7.708)
+2025-09-05 18:13:57 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 18:13:57 INFO  - Completed initialization in 2 ms
+2025-09-05 18:14:22 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 18:14:23 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 18:15:41 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 18:15:41 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 18:15:45 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 18:15:51 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 18:35:48 WARN  - Expired token at path=/api/properties
+2025-09-05 18:36:44 WARN  - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/properties.]
+2025-09-05 18:48:25 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 18:48:25 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 23404 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 18:48:25 INFO  - The following 1 profile is active: "test"
+2025-09-05 18:48:25 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 18:48:25 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 18:48:25 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 18:48:26 INFO  - Finished Spring Data repository scanning in 62 ms. Found 5 JPA repository interfaces.
+2025-09-05 18:48:26 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 18:48:26 INFO  - Root WebApplicationContext: initialization completed in 1799 ms
+2025-09-05 18:48:27 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 18:48:27 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 18:48:27 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 18:48:28 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 18:48:28 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 18:48:29 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 18:48:29 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 18:48:30 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 18:48:30 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 18:48:30 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 18:48:31 INFO  - LiveReload server is running on port 35729
+2025-09-05 18:48:31 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 18:48:31 INFO  - Started RentalSystemApplication in 6.545 seconds (process running for 6.919)
+2025-09-05 18:48:35 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 18:48:35 INFO  - Completed initialization in 1 ms
+2025-09-05 18:52:41 WARN  - Resolved [org.springframework.security.authentication.BadCredentialsException: Invalid credentials]
+2025-09-05 19:07:47 WARN  - Resolved [gr.ath.ds.rentsystem.util.exceptions.AppObjectNotAuthorizedException: Account is disabled]
+2025-09-05 20:09:34 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 20:11:22 WARN  - Resolved [java.lang.SecurityException: Tenant must be verified]
+2025-09-05 20:28:22 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 20:28:22 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 13404 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 20:28:22 INFO  - The following 1 profile is active: "test"
+2025-09-05 20:28:22 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 20:28:22 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 20:28:23 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 20:28:23 INFO  - Finished Spring Data repository scanning in 66 ms. Found 5 JPA repository interfaces.
+2025-09-05 20:28:23 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 20:28:23 INFO  - Root WebApplicationContext: initialization completed in 1906 ms
+2025-09-05 20:28:24 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 20:28:24 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 20:28:24 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 20:28:25 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 20:28:26 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 20:28:26 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 20:28:27 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 20:28:27 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 20:28:27 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 20:28:27 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 20:28:28 INFO  - LiveReload server is running on port 35729
+2025-09-05 20:28:28 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 20:28:28 INFO  - Started RentalSystemApplication in 6.788 seconds (process running for 7.401)
+2025-09-05 20:29:30 INFO  - HV000001: Hibernate Validator 8.0.1.Final
+2025-09-05 20:29:30 INFO  - Starting RentalSystemApplication using Java 17.0.13 with PID 1752 (C:\Users\stavp\IdeaProjects\rental-system\rental-backend\build\classes\java\main started by stavp in C:\Users\stavp\IdeaProjects\rental-system\rental-backend)
+2025-09-05 20:29:30 INFO  - The following 1 profile is active: "test"
+2025-09-05 20:29:30 INFO  - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-05 20:29:30 INFO  - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-05 20:29:31 INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-05 20:29:31 INFO  - Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2025-09-05 20:29:32 INFO  - Tomcat initialized with port 8080 (http)
+2025-09-05 20:29:32 INFO  - Root WebApplicationContext: initialization completed in 1902 ms
+2025-09-05 20:29:32 INFO  - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-05 20:29:32 INFO  - HHH000026: Second-level cache disabled
+2025-09-05 20:29:33 INFO  - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-05 20:29:34 INFO  - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-05 20:29:34 INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-05 20:29:34 INFO  - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-05 20:29:35 WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-05 20:29:35 INFO  - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-09-05 20:29:35 WARN  - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-09-05 20:29:36 INFO  - Exposing 1 endpoint beneath base path '/actuator'
+2025-09-05 20:29:36 INFO  - LiveReload server is running on port 35729
+2025-09-05 20:29:36 INFO  - Tomcat started on port 8080 (http) with context path '/'
+2025-09-05 20:29:36 INFO  - Started RentalSystemApplication in 6.727 seconds (process running for 7.117)
+2025-09-05 20:29:37 INFO  - Initializing Servlet 'dispatcherServlet'
+2025-09-05 20:29:37 INFO  - Completed initialization in 2 ms
