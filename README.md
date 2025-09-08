@@ -27,7 +27,7 @@ API: http://localhost:8080<br>
 Frontend (Vite): http://localhost:5173<br>
 Swagger UI: http://localhost:8080/swagger-ui/index.html<br>
 
-# Installation & Run
+# Installation
 Add dev-all script to rental-frontend/package.json<br>
 **Windows:**
 ```
